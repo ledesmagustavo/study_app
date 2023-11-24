@@ -33,9 +33,8 @@
         tema.id"></ion-icon>
 
           <!-- Visualizar -->
-          <ion-button (click)="cambiarPantalla(tema.id)">
-            <ion-icon slot="icon-only" name="eye-outline" style="font-size: 30px;"></ion-icon>
-          </ion-button>
+          <ion-icon (click)="cambiarPantalla(tema.id)" slot="end" name="videocam-outline"
+            style="font-size: 30px;"></ion-icon>
 
           <!-- ELIMINAR TEMA-->
           <ion-icon (click)="confirmDelete(tema.id)" style=" font-size: 30px;" slot="end" name="trash"> </ion-icon>
