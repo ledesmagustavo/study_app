@@ -53,7 +53,7 @@ export class LoginPage implements OnInit {
   }
 
   loginUser() {
-    console.log('usuario: ', this.usuario);
+    //console.log('usuario: ', this.usuario);
     var data = {
       email: this.usuario.email,
       password: this.usuario.password,

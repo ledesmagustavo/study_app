@@ -124,7 +124,7 @@
           <ion-item>
             <ion-select #selectUsuarios multiple="true" cancelText="Cancelar" okText="Aceptar"
               [(ngModel)]="usuariosSeleccionados" placeholder="Selecione usuarios">
-              <ion-select-option *ngFor="let usuario of usuarios" [value]="usuario.id">
+              <ion-select-option *ngFor="let usuario of usuariosFiltrados" [value]="usuario.id">
                 {{ usuario.name }} {{ usuario.last_name }}
               </ion-select-option>
             </ion-select>

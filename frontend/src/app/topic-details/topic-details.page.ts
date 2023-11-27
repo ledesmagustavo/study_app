@@ -18,7 +18,7 @@ export class TopicDetailsPage implements OnInit {
   newComentario: string = ""
   private platform = inject(Platform);
   idUsuarioActual: number = 0
-
+  usuariosFiltrados: any = []
   usuarios: any = [];
   usuariosSeleccionados: number[] = [];
   @ViewChild('selectUsuarios', { static: false }) selectUsuarios: IonSelect | undefined; // Agregamos "undefined"
@@ -187,7 +187,9 @@ export class TopicDetailsPage implements OnInit {
   }
 
   compartir(topico: any) {
-    this.mostrarSelectUsuarios = true;
+    const user_id = Number(localStorage.getItem('user_id'));
+    this.usuariosFiltrados = this.usuarios.filter((usuario: any) => usuario.id !== user_id);
+        this.mostrarSelectUsuarios = true;
     if (this.selectUsuarios) {
       this.selectUsuarios.open();
     }
