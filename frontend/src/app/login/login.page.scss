@@ -3,14 +3,14 @@
 ion-card.login-card {
   margin: 20px;
   border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 6px rgba(248, 176, 176, 0.1);
 }
 
 ion-title.login-title {
   text-align: center;
   font-size: 24px;
   font-weight: 600;
-  color: white;
+  color: rgba(255, 255, 255, 0.804)
 }
 
 ion-card-content.login-content {
@@ -23,7 +23,7 @@ ion-item {
 
 ion-button.login-button {
   --border-radius: 5px;
-  --background: linear-gradient(to bottom, rgb(51, 54, 255), #00c3ff);
+  --background: linear-gradient(to bottom, rgb(51, 58, 255), #00b3ff);
   --color: white;
   font-weight: bold;
   margin-top: 16px;

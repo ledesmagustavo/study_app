@@ -124,18 +124,18 @@ const agregarService = async function (data) {
   }
 };
 
-
+// envia la contrasenha de recuperacion 
 const sendEmail = async (destinoEmail, subject, html) => {
   let transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-      user: 'w0973898419@gmail.com',
-      pass: 'vzdu xyps uded cafz'
+      user: 'studyapp38@gmail.com',
+      pass: 'dgdc bubx wskd hmai'
     }
   });
 
   let mailOptions = {
-    from: 'w0973898419@gmail.com',
+    from: 'studyapp38@gmail.com',
     to: destinoEmail,
     subject: subject,
     html: html  // Cambiado de 'text' a 'html'
