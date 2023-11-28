@@ -1,5 +1,5 @@
 const { Sequelize } = require("sequelize");
-//el sequileze que se recupera debe ser en minuscula, pq hay dos sequelize
+//el sequileze que se recupera debe ser en minuscula
 //db, user, password
 const sequelize = new Sequelize("data_base_lp5", 'postgres', 'admin', {
     host: 'localhost',
