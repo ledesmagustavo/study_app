@@ -2,7 +2,7 @@ const { DataTypes } = require("sequelize");
 const { sequelize } = require("../connection");
 
 const UserModel = sequelize.define("User", {
-  //Model attributes are defined here
+  //Los atributos del modelo se definen aqui
   id: {
     type: DataTypes.INTEGER,
     allowNull: false,
@@ -34,7 +34,7 @@ const UserModel = sequelize.define("User", {
     allowNull:false
   },
 },{
-    //Other model options go here
+    
     tableName: 'users',
     timestamps: false
 });

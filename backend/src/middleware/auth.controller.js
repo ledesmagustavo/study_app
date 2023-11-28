@@ -1,4 +1,4 @@
-const { sequelize } = require("../connection"); // importar la conexion a la DB
+const { sequelize } = require("../connection"); // importar la conexion a la Base de datos
 const jwt = require("jsonwebtoken");
 
 const auth = async function (req, res, next) {
@@ -11,7 +11,7 @@ const auth = async function (req, res, next) {
     return;
   } else {
     let token = req.headers.authorization;
-    // Consultar la DB para verificar el token
+    // Consultar la Base de datos para verificar el token
     const userDB = await sequelize.query(
       "SELECT * FROM users WHERE token = '" + token + "'"
     );
