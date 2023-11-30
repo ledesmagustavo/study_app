@@ -21,7 +21,7 @@ export class TopicEditPage implements OnInit {
   constructor(
     private toastController: ToastController,
     private router: Router
-  ) {}
+  ) { }
 
   ionViewWillEnter(): void {
     //verificar si el usuario no esta logueado
@@ -84,6 +84,7 @@ export class TopicEditPage implements OnInit {
       order: this.topic.order,
       priority: this.topic.priority,
       color: this.topic.color,
+      link: this.topic.link,
       //owner_user_id: this.topico.owner_user_id,
     };
     axios

@@ -53,7 +53,7 @@ const consultarPorCodigo = async function (req, res) {
 };
 
 const actualizar = async function (req, res) {
-  console.log("actualizar topicos controller");
+  console.log("actualizar controller", req.body);
 
   let topicsReturn = null;
 
@@ -66,6 +66,7 @@ const actualizar = async function (req, res) {
       req.body.order,
       req.body.priority,
       req.body.color,
+      req.body.link,
       req.body.owner_user_id
     );
     res.json({

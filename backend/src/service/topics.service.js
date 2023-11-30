@@ -44,9 +44,10 @@ const actualizar = async function (
   order,
   priority,
   color,
+  link,
   owner_user_id
 ) {
-  console.log("actualizar topicos");
+  console.log("mmmmmmfgh", link);
 
   let topicsReturn = null;
   const data = {
@@ -57,6 +58,7 @@ const actualizar = async function (
     order,
     priority,
     color,
+    link,
     owner_user_id,
   };
 

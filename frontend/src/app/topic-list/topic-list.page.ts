@@ -98,6 +98,8 @@ export class TopicListPage implements OnInit {
         if (result.data.success == true) {
           this.presentToast('Topico Eliminado');
           this.getTopics();
+          this.getTopicsByLikes();
+          this.getTopicsShareMe();
         } else {
           this.presentToast(result.data.error);
         }
@@ -278,7 +280,7 @@ export class TopicListPage implements OnInit {
       .catch((error) => {
         console.log(error.message);
       });
-  }  
+  }
   getUserLiked() {
     const user_id = localStorage.getItem('user_id');
     const token = localStorage.getItem('token');

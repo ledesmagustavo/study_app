@@ -35,9 +35,10 @@
     <ion-card-content>
       <p>Color: {{ topic.color }}</p>
       <p>Fecha de Creación: {{ topic.create_date }}</p>
+      <a href="{{topic.link}}">Ver Material</a>
     </ion-card-content>
   </ion-card>
-  
+
   <ion-card *ngIf="topic">
     <ion-card-header class="comment-author" style="padding-bottom: 0;">{{Comentarios}}</ion-card-header>
     <ion-card-content>
