@@ -27,5 +27,7 @@
 
 // En src/global.scss
 ion-content {
-    --background: #232323;
+    --background: url('/assets/study.jpg') center center / cover no-repeat;
+    color: #ffffff;
+        
 }
