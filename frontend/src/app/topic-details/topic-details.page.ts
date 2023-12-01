@@ -23,8 +23,8 @@ export class TopicDetailsPage implements OnInit {
   usuariosSeleccionados: number[] = [];
   @ViewChild('selectUsuarios', { static: false }) selectUsuarios: IonSelect | undefined; // Agregamos "undefined"
   mostrarSelectUsuarios: boolean = false
-
   topicsShareMe: any = []
+  links: any[] = []
 
   constructor(
     private route: ActivatedRoute,
@@ -63,7 +63,11 @@ export class TopicDetailsPage implements OnInit {
           }
           if (result.data.topic != null) {
             this.topic = result.data.topic;
-
+            let linksTopic = this.topic.link;
+            linksTopic = linksTopic.slice(1, -1);
+            let arreglo = linksTopic.split('","');
+            this.links = arreglo.map((elemento: any) => elemento.replace(/"/g, ''));
+            console.log(this.links);
           } else {
             this.topic = {};
           }
@@ -93,7 +97,7 @@ export class TopicDetailsPage implements OnInit {
         if (result.data.success == true) {
           this.topicoComentarios = result.data.topicos;
           const valor = localStorage.getItem('user_id');
-          this.idUsuarioActual = valor !== null ? Number(valor) : 0; // O algún valor por defecto en lugar de 0
+          this.idUsuarioActual = valor !== null ? Number(valor) : 0;
 
           if (this.topicoComentarios.length == 0) {
             this.Comentarios = "Sin Comentarios"
@@ -189,7 +193,7 @@ export class TopicDetailsPage implements OnInit {
   compartir(topico: any) {
     const user_id = Number(localStorage.getItem('user_id'));
     this.usuariosFiltrados = this.usuarios.filter((usuario: any) => usuario.id !== user_id);
-        this.mostrarSelectUsuarios = true;
+    this.mostrarSelectUsuarios = true;
     if (this.selectUsuarios) {
       this.selectUsuarios.open();
     }
@@ -314,7 +318,7 @@ export class TopicDetailsPage implements OnInit {
     axios.post('http://localhost:3000/topics/like', data, config)
       .then((result) => {
         if (result.data.success) {
-          //aqui se puede mostrar un mensaje.          
+          //aqui se puede mostrar un mensaje.
         }
       })
       .catch((error) => {
@@ -343,5 +347,9 @@ export class TopicDetailsPage implements OnInit {
       .catch((error) => {
         this.presentToast(error.message);
       });
+  }
+
+  trackByFn(index: any) {
+    return index;
   }
 }

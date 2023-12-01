@@ -35,7 +35,9 @@
     <ion-card-content>
       <p>Color: {{ topic.color }}</p>
       <p>Fecha de Creación: {{ topic.create_date }}</p>
-      <a href="{{topic.link}}">Ver Material</a>
+      <div *ngFor="let link of links; trackBy: trackByFn; let i = index">
+        <a href="{{links[i]}}">Ver Material {{i + 1}}</a>
+      </div>
     </ion-card-content>
   </ion-card>
 
